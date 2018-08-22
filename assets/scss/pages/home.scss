@@ -1,0 +1,113 @@
+%pseudo {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50%;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.content-box {
+    position: relative;
+    background-color: rgba(0, 153, 204, .6);
+    padding: 60px 50px 60px 40px;
+    color: #fff;
+    z-index: 2;
+}
+
+.section-intro {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 0;
+    color: $primary-color;
+    background: url(../img/bg-banner.jpg) center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    &:before {
+        @extend %pseudo;
+        background: $dark;
+        left: 0;
+        opacity: .8;
+    }
+    &:after {
+        @extend %pseudo;
+        background: $white;
+        right: 0;
+        opacity: .6;
+    }
+
+    .title-page {
+        max-width: 260px;
+        margin-bottom: 40px;
+    }
+    .text-small {
+        margin-bottom: 80px;
+    }
+}
+
+.section-software {
+    .col-cards-wrap {
+        max-width: 1360px;
+    }
+    .col-card-list {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .col-card {
+        width: 30%;
+        padding-left: 15px;
+        padding-right: 15px;
+        &-lg {
+            width: 37.5%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.section-video {
+    .video {
+        display: block;
+        width: 100%;
+        height: 400px;
+    }
+}
+/**
+*CONTACT SECTION
+**/
+%pseudo {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50%;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.section-contacts {
+    position: relative;
+    background: url(../img/bg-contact.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 120px 0;
+    &:before {
+        @extend %pseudo;
+        background: $dark;
+        right: 0;
+        opacity: .8;
+    }
+    &:after {
+        @extend %pseudo;
+        background: $white;
+        left: 0;
+        opacity: .6;
+    }
+}

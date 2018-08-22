@@ -1,0 +1,22 @@
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 17px 0;
+    z-index: 9999;
+    .logo-site {
+        display: inline-block;
+        vertical-align: middle;
+        width: 300px;
+        height: 86px;
+        margin-left: 20px;
+    }
+    .menu-header {
+        width: 50%;
+    }
+}

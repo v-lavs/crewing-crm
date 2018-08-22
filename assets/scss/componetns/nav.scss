@@ -1,0 +1,28 @@
+.nav {
+    &-item {
+        margin: 0 20px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &-link {
+        font-size: 18px;
+        font-weight: 700;
+        color: $dark;
+        padding: 12px 30px;
+        border: 3px solid transparent;
+        border-radius: 4px;
+        transition: color .35s;
+        &:hover,
+        &:focus {
+            color: $primary-color;
+            border: 3px solid $blue;
+            background: $blue;
+        }
+        &.active {
+            color: $blue;
+            border: 3px solid $blue;
+        }
+    }
+
+}

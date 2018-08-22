@@ -1,0 +1,23 @@
+body {
+    background-color: $primary-color;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+.wrapper {
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border:0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
