@@ -1,3 +1,4 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
 @import 'utils/variables';
 @import 'utils/mixins';
 
@@ -5,6 +6,7 @@
 @import 'base/typography';
 @import 'base/base';
 
+@import 'componetns/btn';
 @import 'componetns/nav';
 @import 'componetns/section';
 
