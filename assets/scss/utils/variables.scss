@@ -18,15 +18,6 @@ $success: #4cd964;
 * Breakpoints
 */
 
-//$grid-breakpoints: (
-//        xs: 0,
-//        sm: 576px,
-//        md: 768px,
-//        lg: 992px,
-//        xl: 1300px,
-//        xxl: 1620px,
-//);
-
 $xs: '(max-width: 0px)';
 $sm: '(min-width: 576px)';
 $md: '(min-width: 768px)';
@@ -40,9 +31,6 @@ $xxl: '(min-width: 1620px)';
 
 $grid-gutter-width: 30px;
 
-//$font-size-base: 1.125rem;
-//$input-bg: #f2f2f2;
-//$input-border-radius: 4px;
 
 
 

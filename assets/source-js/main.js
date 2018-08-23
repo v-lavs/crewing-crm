@@ -42,13 +42,9 @@ $(document).ready(function () {
     jQuery('.backdrop').fadeOut();
   });
 
-  // /**
-  //  * SCROLLING
-  //  **/
-  // jQuery("#contacts").on("click","a", function (e) {
-  //   e.preventDefault();
-  //   var id  = jQuery(this).attr('href'),
-  //     top = jQuery(id).offset().top;
-  //   jQuery('body,html').animate({scrollTop: top}, 6000);
-  // });
+  /**
+   * SIMPLE LIGHTBOX FOR IMAGES
+   */
+
+  var lightbox = $('.card-slider a').simpleLightbox();
 });

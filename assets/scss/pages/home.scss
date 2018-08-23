@@ -9,26 +9,41 @@
 }
 
 .section-header {
-    margin-bottom: 44px;
+    margin-bottom: 20px;
+    @include respond-to($lg) {
+        margin-bottom: 44px;
+    }
 }
 
 .content-box {
     position: relative;
     background-color: rgba(0, 153, 204, .6);
-    padding: 75px 40px 55px 50px;
+    padding: 20px 20px 15px;
     color: $white;
     z-index: 2;
+    @include respond-to($lg) {
+        padding: 75px 40px 55px 50px;
+    }
 }
 
 .section-intro {
     position: relative;
+    display: table;
     width: 100%;
-    min-height: 100vh;
-    padding: 120px 0;
+    height: 280px;
+    padding: 52px 0 38px;
     color: $white;
     background: url(../img/bg-banner.jpg) center center no-repeat;
     background-size: cover;
     overflow: hidden;
+    @include respond-to($md) {
+        padding: 120px 0;
+    }
+
+    @include respond-to($lg) {
+        min-height: 100vh;
+    }
+
     &:before {
         @extend %pseudo;
         background: $dark;
@@ -44,10 +59,24 @@
 
     .title-page {
         max-width: 260px;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
+        @include respond-to($lg) {
+            margin-bottom: 50px;
+        }
     }
     .text-small {
-        margin-bottom: 80px;
+        margin-bottom: 10px;
+        @include respond-to($lg) {
+            margin-bottom: 80px;
+        }
+    }
+    .wrap-btn {
+        font-size: 10px;
+        text-align: center;
+        @include respond-to($lg) {
+            font-size: 18px;
+            text-align: left;
+        }
     }
 }
 
@@ -57,39 +86,52 @@
         position: relative;
         z-index: 2;
     }
-    &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 0;
-        height: 300px;
-        width: 74%;
-        background-color: rgba(14, 26, 54, 0.05);
-        transform: translateY(-50%);
-        z-index: 1;
+    @include respond-to($lg) {
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 300px;
+            width: 74%;
+            background-color: rgba(14, 26, 54, 0.05);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
     }
     .advantages-list {
         position: relative;
-        @include respond-to($md) {
+        @include respond-to($lg) {
             &:before {
                 content: '';
                 position: absolute;
                 top: 0;
                 bottom: 0;
-                left: 22.7%;
+                left: 30%;
                 display: block;
                 width: 2px;
                 background-color: $dark;
                 z-index: 1;
+                @include respond-to($xl) {
+                    left: 22.7%;
+                }
             }
         }
         &-item {
             display: flex;
+            align-items: center;
+            @include respond-to($lg) {
+                align-items: flex-start;
+            }
         }
         .card-body {
             padding-top: 10px;
-            padding-left: 7.5%;
-            padding-bottom: 40px;
+            padding-left: 4%;
+            padding-bottom: 30px;
+            @include respond-to($lg) {
+                padding-left: 7.5%;
+                padding-bottom: 40px;
+            }
 
         }
         .icon-wrap {
@@ -106,8 +148,10 @@
         flex-shrink: 0;
         justify-content: center;
         align-items: center;
-        margin-left: 7%;
-        margin-right: 7%;
+        @include respond-to($lg) {
+            margin-left: 7%;
+            margin-right: 7%;
+        }
         .card-img {
             display: block;
             height: auto;
@@ -128,10 +172,27 @@
 
 }
 
+.section-vh {
+    padding: 0;
+    & > .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 0;
+        @include respond-to($lg) {
+            padding: 65px 0;
+            min-height: 100vh;
+        }
+        &:after {
+            content: ' ';
+        }
+    }
+}
+
 .section-software {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 320px;
     color: $white;
     background: url(../img/bg-sotfware.jpg) center center no-repeat;
     background-size: cover;
@@ -147,16 +208,21 @@
         opacity: .8;
     }
     .col-cards-wrap {
+        width: 100%;
         max-width: 1360px;
     }
     .col-card-list {
+        display: flex;
         justify-content: space-between;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
     .col-card {
-        width: 30%;
+        width: 100%;
         padding-left: 15px;
         padding-right: 15px;
+        @include respond-to($lg) {
+            width: 30%;
+        }
         &-lg {
             width: 37.5%;
             padding-left: 15px;
@@ -167,8 +233,15 @@
         }
     }
     .section-header {
-        margin-bottom: 217px;
+        margin-bottom: 20px;
     }
+
+    @include respond-to($lg) {
+        .section-header,
+        .col-cards-wrap {
+        }
+    }
+
     .block-img {
         position: relative;
         padding-top: 69.84%;
@@ -183,7 +256,10 @@
         z-index: 1;
     }
     .title-screen {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        @include respond-to($lg) {
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -191,16 +267,23 @@
     .video {
         display: block;
         width: 100%;
-        height: 400px;
+        height: 180px;
+        @include respond-to($md) {
+            height: 320px;
+        }
+        @include respond-to($lg) {
+            height: 400px;
+        }
     }
     .section-header {
-        margin-bottom: 148px;
+        margin-bottom: 20px;
     }
 }
 
 /**
 *CONTACT SECTION
 **/
+
 %pseudo {
     content: '';
     position: absolute;
@@ -213,11 +296,19 @@
 
 .section-contacts {
     position: relative;
+    display: table;
+    width: 100%;
     background: url(../img/bg-contact.jpg) center center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
-    min-height: 100vh;
-    padding: 120px 0;
+    min-height: 400px;
+    padding: 20px 0 30px;
+    @include respond-to($md) {
+        padding: 120px 0;
+    }
+    @include respond-to($lg) {
+        height: 100vh;
+    }
     &:before {
         @extend %pseudo;
         background: $dark;
@@ -230,17 +321,57 @@
         left: 0;
         opacity: .6;
     }
-
+    .section-header {
+        margin-bottom: 10px;
+        @include respond-to($lg) {
+            margin-bottom: 40px;
+        }
+    }
     .contact-form {
         .form-group {
+            margin-bottom: 10px;
+            @include respond-to($lg) {
+                margin-bottom: 20px;
+            }
+        }
+        textarea {
+            overflow: auto;
             margin-bottom: 20px;
         }
         .form-control {
             border-radius: 4px;
             background-color: #f2f2f2;
-            font-size: 18px;
+            font-size: 12px;
             font-weight: 500;
-            padding: 11px 30px;
+            padding: 8px 12px;
+            @include respond-to($lg) {
+                font-size: 18px;
+                padding: 11px 30px;
+            }
+        }
+        .btn-lg {
+            width: 100%;
+            @include respond-to($lg) {
+                width: auto;
+            }
+        }
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #bdbdbd;
+            font-style: italic;
+        }
+        .wrap-btn {
+            font-size: 16px;
+            text-align: center;
+            @include respond-to($lg) {
+                font-size: 18px;
+                text-align: right;
+            }
+        }
+        .btn-lg {
+            padding: 12px 0;
+            @include respond-to($lg) {
+                padding: 17px 33px;
+            }
         }
     }
 }

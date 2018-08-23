@@ -6,12 +6,18 @@ body {
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    @include respond-to($lg){
+    @include respond-to($lg) {
         font-size: 16px;
     }
 }
+
 .wrapper {
     overflow: hidden;
+}
+
+.d-tcell {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .visually-hidden {
@@ -20,7 +26,7 @@ body {
     height: 1px;
     margin: -1px;
     padding: 0;
-    border:0;
+    border: 0;
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
@@ -30,5 +36,32 @@ body {
 }
 
 .title-section {
-    margin-bottom: 44px;
+    margin-bottom: 20px;
+    @include respond-to($lg) {
+        margin-bottom: 44px;
+    }
+}
+
+.space-delimeter {
+    @include respond-to($xl) {
+        padding-top: 100px;
+    }
+}
+
+/**
+* LIGHTBOX STYLES
+ */
+.sl-overlay {
+    background: #0e1a36;
+    opacity: 0.8;
+}
+.sl-wrapper {
+    .sl-navigation {
+        button {
+            color: $white;
+        }
+    }
+    .sl-close {
+        color: $white;
+    }
 }

@@ -25,6 +25,10 @@
         background-color: $dark;
         transition: transform .5s;
         z-index: 2000;
+        .img-logo-w {
+            display: block;
+            width: 100%;
+        }
         &.open {
             transform: translateX(0);
         }
@@ -102,28 +106,27 @@
     }
 }
 
-//@include respond-to($md) {
-    .img-logo-w {
+.img-logo-w {
+    display: none;
+}
+
+.scroll {
+    background-color: $dark !important;
+    .img-logo {
         display: none;
     }
-    .scroll {
-        background-color: $dark !important;
-        .img-logo {
-            display: none;
-        }
-        .img-logo-w {
-            display: block;
-            width: 100%;
-        }
-        .nav {
-            &-link {
-                color: $white;
-                &.active,
-                &:active {
-                    color: $primary;
-                }
+    .img-logo-w {
+        display: block;
+        width: 100%;
+    }
+    .nav {
+        &-link {
+            color: $white;
+            &.active,
+            &:active {
+                color: $primary;
             }
         }
     }
-//}
+}
 

@@ -14,7 +14,11 @@
     font-size: 18px;
     font-weight: 700;
     &.btn-lg {
-        padding: 13px 35px;
+        padding: 9px 17px;
+        text-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+        @include respond-to($lg){
+            padding: 13px 35px;
+        }
     }
     &-success {
         border-radius: 8px;
