@@ -15,7 +15,7 @@
 .content-box {
     position: relative;
     background-color: rgba(0, 153, 204, .6);
-    padding: 60px 50px 60px 40px;
+    padding: 75px 50px 60px 40px;
     color: #fff;
     z-index: 2;
 }
@@ -44,7 +44,7 @@
 
     .title-page {
         max-width: 260px;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
     .text-small {
         margin-bottom: 80px;
@@ -103,6 +103,24 @@
 }
 
 .section-software {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 0;
+    color: $primary-color;
+    background: url(../img/bg-sotfware.jpg) center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        background: $dark;
+        opacity: .8;
+    }
     .col-cards-wrap {
         max-width: 1360px;
     }

@@ -1,34 +1,51 @@
+%btn {
+     @extend .btn;
+ }
+%active {
+    @extend %outline-primary;
+}
+
+%hover {
+    @extend %outline-primary-hover;
+}
+
 .nav {
-    &-item {
-        margin: 0 20px;
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-    &-link {
-        @extend .btn;
-        font-size: 18px;
-        font-weight: 700;
-        color: $dark;
-        border: 3px solid transparent;
-        &.active {
-            @extend %outline-primary;
-            &:hover {
-                color: #fff;
+    @include respond-to($md) {
+        &-item {
+            margin: 0 20px;
+            &:last-child {
+                margin-right: 0;
             }
         }
-        &:hover,
-        &:focus {
-            @extend %outline-primary-hover;
+        &-link {
+            @extend %btn;
+            font-size: 18px;
+            font-weight: 700;
+            color: $dark;
+            border: 3px solid transparent;
+            &.active,
+            &:active {
+                @extend %active;
+            }
+            &:hover,
+            &:focus {
+                @extend %hover;
+                color: $primary-color !important;
+            }
         }
     }
 }
 
+
 .scroll {
-    background-color: #0e1a36!important;
+    background-color: $dark!important;
     .nav {
         &-link {
             color: #fff;
+            &.active,
+            &:active {
+                color: $blue;
+            }
         }
     }
 }
