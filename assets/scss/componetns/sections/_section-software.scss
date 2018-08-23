@@ -1,0 +1,80 @@
+.section-software {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    color: $white;
+    background: url(../img/bg-sotfware.jpg) center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        background: $dark;
+        opacity: .8;
+    }
+    .col-cards-wrap {
+        width: 100%;
+        max-width: 1360px;
+        overflow: hidden;
+    }
+    .col-card-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        margin: 0;
+        transition: transform .5s;
+    }
+    .col-card {
+        flex-shrink: 0;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        @include respond-to($lg) {
+            width: 30%;
+        }
+        &-lg {
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            @include respond-to($lg) {
+                width: 37.5%;
+                .block-img {
+                    padding-top: 55%;
+                }
+            }
+        }
+    }
+    .section-header {
+        margin-bottom: 20px;
+    }
+
+    @include respond-to($lg) {
+        .section-header,
+        .col-cards-wrap {
+        }
+    }
+
+    .block-img {
+        position: relative;
+        padding-top: 69.84%;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+    .img-link {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+    .title-screen {
+        margin-bottom: 10px;
+        @include respond-to($lg) {
+            margin-bottom: 20px;
+        }
+    }
+}
