@@ -17,6 +17,25 @@
         margin-left: 20px;
     }
     .menu-header {
-        min-width: 50%;
+        @include respond-to($md) {
+            min-width: 50%;
+        }
+    }
+    .burger {
+        display: block;
+        width: 16px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        @include respond-to($md) {
+            display: none !important;
+        }
+        .line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $primary-color;
+            margin-bottom: 3px;
+        }
     }
 }
