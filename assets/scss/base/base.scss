@@ -1,11 +1,14 @@
 body {
-    background-color: $primary-color;
-    font-size: 16px;
+    background-color: $white;
+    font-size: 12px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
+    @include respond-to($lg){
+        font-size: 16px;
+    }
 }
 .wrapper {
     overflow: hidden;
@@ -20,4 +23,12 @@ body {
     border:0;
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+
+.title-blue {
+    color: $primary;
+}
+
+.title-section {
+    margin-bottom: 44px;
 }

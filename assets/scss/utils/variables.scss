@@ -7,10 +7,10 @@ $primary-fonts: 'Roboto', sans-serif;
 * Colors
 */
 
-$primary-color: #fff;
+$white: #fff;
 $secondary-color: #565656;
 $dark: #0e1a36;
-$blue: #0099cc;
+$primary: #0099cc;
 $success: #4cd964;
 
 
@@ -39,5 +39,10 @@ $xxl: '(min-width: 1620px)';
 */
 
 $grid-gutter-width: 30px;
+
+//$font-size-base: 1.125rem;
+//$input-bg: #f2f2f2;
+//$input-border-radius: 4px;
+
 
 

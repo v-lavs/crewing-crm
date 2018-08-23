@@ -1,8 +1,14 @@
 .text-small {
-    font-size: 14px;
+    font-size: 10px;
+    @include respond-to($lg){
+        font-size: 14px;
+    }
 }
 
 .text-larg {
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 500;
+    @include respond-to($lg){
+        font-size: 21px;
+    }
 }

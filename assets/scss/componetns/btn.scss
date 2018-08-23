@@ -1,11 +1,11 @@
 %outline-primary-hover {
-     background-color: #0099cc;
-     color: #fff;
+     background-color: $primary;
+     color: $white;
  }
 
 %outline-primary {
-    border: solid 3px #0099cc;
-    color: #0099cc;
+    border: solid 3px $primary;
+    color: $primary;
 }
 
 .btn {
@@ -20,7 +20,7 @@
         border-radius: 8px;
         background-color: #4cd964;
         box-shadow: 0 0 8px 0 #4cd964;
-        color: #fff;
+        color: $white;
         border: none;
         outline: none;
         &:hover,

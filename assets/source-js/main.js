@@ -35,8 +35,18 @@ $(document).ready(function () {
     e.preventDefault();
     nav.addClass('open');
   });
-  $('.close-menu').click(function (e) {
+  $('.close-nav').click(function (e) {
     e.preventDefault();
     nav.removeClass('open');
   });
+
+  // /**
+  //  * SCROLLING
+  //  **/
+  // jQuery("#contacts").on("click","a", function (e) {
+  //   e.preventDefault();
+  //   var id  = jQuery(this).attr('href'),
+  //     top = jQuery(id).offset().top;
+  //   jQuery('body,html').animate({scrollTop: top}, 6000);
+  // });
 });

@@ -34,7 +34,7 @@
                 font-size: 12px;
                 font-weight: 700;
                 padding: 7px 50px 7px 30px;
-                color: $primary-color;
+                color: $white;
             }
         }
     }
@@ -96,24 +96,34 @@
             &:hover,
             &:focus {
                 @extend %hover;
-                color: $primary-color !important;
+                color: $white !important;
             }
         }
     }
 }
 
-@include respond-to($md) {
+//@include respond-to($md) {
+    .img-logo-w {
+        display: none;
+    }
     .scroll {
         background-color: $dark !important;
+        .img-logo {
+            display: none;
+        }
+        .img-logo-w {
+            display: block;
+            width: 100%;
+        }
         .nav {
             &-link {
-                color: #fff;
+                color: $white;
                 &.active,
                 &:active {
-                    color: $blue;
+                    color: $primary;
                 }
             }
         }
     }
-}
+//}
 
