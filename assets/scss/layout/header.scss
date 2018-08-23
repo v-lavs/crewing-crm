@@ -16,18 +16,6 @@
         vertical-align: middle;
         width: 81px;
         height: 23px;
-        //.img-logo {
-        //    display: none;
-        //    @include respond-to($md){
-        //        display: block;
-        //    }
-        //}
-        //.img-logo-w {
-        //    display: block;
-        //    @include respond-to($md){
-        //        display: none;
-        //    }
-        //}
         @include respond-to($md){
             display: block;
             width: 300px;
@@ -58,5 +46,19 @@
             background-color: $white;
             margin-bottom: 3px;
         }
+    }
+    .backdrop {
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $dark;
+        opacity: 0.8;
+        z-index: 1000;
+    }
+    &.open {
+        display: block;
     }
 }

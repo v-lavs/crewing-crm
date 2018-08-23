@@ -20,11 +20,11 @@ $(document).ready(function () {
       $('.header').removeClass('scroll');
     }
   }
-
   addScrollClass();
   $(window).on('scroll', function () {
     addScrollClass();
   });
+
 
   /**
    * MOB MENU SCRIPT
@@ -34,10 +34,12 @@ $(document).ready(function () {
   $('.burger').click(function (e) {
     e.preventDefault();
     nav.addClass('open');
+    jQuery('.backdrop').fadeIn();
   });
   $('.close-nav').click(function (e) {
     e.preventDefault();
     nav.removeClass('open');
+    jQuery('.backdrop').fadeOut();
   });
 
   // /**
