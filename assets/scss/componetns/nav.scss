@@ -10,68 +10,72 @@
     @extend %outline-primary-hover;
 }
 
-.menu-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    max-height: 100%;
-    min-width: 200px;
-    max-width: 300px;
-    padding: 15px 0;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    background-color: $dark;
-    transition: transform .5s;
-    z-index: 2000;
-    &.active {
-        transform: translateX(0);
-    }
-    .nav {
-        &-link {
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 7px 50px 7px 30px;
-            color: $primary-color;
+@media screen and (max-width: 767px) {
+    .menu-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        max-height: 100%;
+        min-width: 200px;
+        max-width: 300px;
+        padding: 15px 0;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        background-color: $dark;
+        transition: transform .5s;
+        z-index: 2000;
+        &.open {
+            transform: translateX(0);
+        }
+        .nav {
+            &-link {
+                display: block;
+                font-size: 12px;
+                font-weight: 700;
+                padding: 7px 50px 7px 30px;
+                color: $primary-color;
+            }
         }
     }
+    .nav {
+        flex-direction: column;
+        &-link {
+            &.active {
+                border: none !important;
+                background-color: #1e2e55;
+            }
+        }
+    }
+}
+
+.header {
     .menu-logo {
         display: block;
         margin: 0 0 40px;
         text-align: center;
-        .logo-site {
-            width: 80px;
-            height: 23px;
-        }
-        @include respond-to($md) {
-            display: none;
-        }
-    }
-    .close-nav {
-        position: absolute;
-        top: 19px;
-        left: 21px;
-        display: block;
-        width: 13px;
-        height: 13px;
-        border: none;
-        background: url("../img/icons/btn_menu_close.svg") center center no-repeat;
-        z-index: 10;
         @include respond-to($md) {
             display: none;
         }
     }
 }
 
-.nav {
-    flex-direction: column;
-    &-link {
-        &.active {
-            border: none !important;
-            background-color: #1e2e55;
-        }
+.close-nav {
+    position: absolute;
+    top: 19px;
+    left: 21px;
+    display: block;
+    width: 13px;
+    height: 13px;
+    border: none;
+    background: url("../img/icons/btn_menu_close.svg") center center no-repeat;
+    z-index: 10;
+    @include respond-to($md) {
+        display: none;
     }
+}
+
+.nav {
     @include respond-to($md) {
         flex-direction: row;
         &-item {

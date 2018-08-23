@@ -25,4 +25,18 @@ $(document).ready(function () {
   $(window).on('scroll', function () {
     addScrollClass();
   });
+
+  /**
+   * MOB MENU SCRIPT
+   **/
+
+  var nav = $('.menu-header');
+  $('.burger').click(function (e) {
+    e.preventDefault();
+    nav.addClass('open');
+  });
+  $('.close-menu').click(function (e) {
+    e.preventDefault();
+    nav.removeClass('open');
+  });
 });
