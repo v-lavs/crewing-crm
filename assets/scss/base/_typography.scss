@@ -35,5 +35,17 @@
     &-primary {
         color: $primary;
     }
+}
 
+p {
+    margin-bottom: 10px;
+}
+
+.text-section,
+.block-text{
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }

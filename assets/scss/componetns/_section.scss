@@ -7,6 +7,12 @@
         position: relative;
         z-index: 2;
     }
+    &-title {
+        margin-bottom: 20px;
+        @include respond-to($lg) {
+            margin-bottom: 44px;
+        }
+    }
     &-vh {
         padding: 0;
         @include respond-to($lg) {

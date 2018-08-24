@@ -1749,6 +1749,13 @@ select.form-control-lg:not([size]):not([multiple]) {
 .text-primary {
   color: #0099cc; }
 
+p {
+  margin-bottom: 10px; }
+
+.text-section p:last-child,
+.block-text p:last-child {
+  margin-bottom: 0; }
+
 body {
   background-color: #fff;
   font: normal 12px/normal Roboto, sans-serif;
@@ -1779,12 +1786,6 @@ body {
 .img-fluid {
   max-width: 100%;
   height: auto; }
-
-.title-section {
-  margin-bottom: 20px; }
-  @media only screen and (min-width: 992px) {
-    .title-section {
-      margin-bottom: 44px; } }
 
 .space-delimeter {
   padding-top: 50px; }
@@ -1947,6 +1948,11 @@ body {
   .section .container {
     position: relative;
     z-index: 2; }
+  .section-title {
+    margin-bottom: 20px; }
+    @media only screen and (min-width: 992px) {
+      .section-title {
+        margin-bottom: 44px; } }
   .section-vh {
     padding: 0; }
     @media only screen and (min-width: 992px) {
@@ -2217,7 +2223,7 @@ body {
     z-index: 2; }
   .section-advantages .card-body {
     padding-left: 7.5%; }
-  .section-advantages .card-text {
+  .section-advantages .block-text {
     padding-left: 15px; } }
 
 .section-software {
