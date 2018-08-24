@@ -25,9 +25,11 @@
             padding-top: 30px;
             padding-bottom: 30px;
             @include respond-to($lg) {
-                min-height: 100vh;
                 padding-top: 65px;
                 padding-bottom: 65px;
+            }
+            @media screen and (orientation: landscape) and (min-width: 992px) {
+                min-height: 100vh;
             }
             &:after {
                 content: ' ';
