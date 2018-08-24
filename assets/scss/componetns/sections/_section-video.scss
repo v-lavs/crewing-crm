@@ -1,5 +1,8 @@
 .section-video {
-    padding: 60px 0;
+    & > .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
     .video {
         display: block;
         width: 100%;

@@ -43,7 +43,8 @@ body {
 }
 
 .space-delimeter {
-    @include respond-to($xl) {
+    padding-top: 50px;
+    @include respond-to($xxl) {
         padding-top: 100px;
     }
 }
