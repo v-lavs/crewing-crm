@@ -61,17 +61,20 @@ $(document).ready(function () {
    *  TOGGLE ACTIVE CLASS
    * */
 
+  var nav = $('.header-menu');
+
   $('.header .nav-link').click(function (e) {
     e.preventDefault();
     $('.header .nav-link').removeClass('active');
     $(this).addClass('active');
+
+    nav.removeClass('open');
+    jQuery('.backdrop').fadeOut();
   });
 
   /**
    * MOB MENU SCRIPT
    **/
-
-  var nav = $('.header-menu');
 
   $('.burger').click(function (e) {
     e.preventDefault();
