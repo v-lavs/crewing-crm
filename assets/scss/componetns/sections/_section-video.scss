@@ -1,16 +1,24 @@
 .section-video {
+    padding: 60px 0;
     .video {
         display: block;
         width: 100%;
         height: 180px;
-        @include respond-to($md) {
+    }
+}
+
+@include respond-to($md) {
+    .section-video {
+        .video {
             height: 320px;
         }
-        @include respond-to($lg) {
+    }
+}
+
+@include respond-to($lg) {
+    .section-video {
+        .video {
             height: 400px;
         }
-    }
-    .section-header {
-        margin-bottom: 20px;
     }
 }

@@ -1,4 +1,4 @@
-section {
+.section {
     padding: 30px 0;
     @include respond-to($lg){
         padding: 65px 0;
