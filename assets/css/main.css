@@ -1940,6 +1940,26 @@ section {
   section .container {
     position: relative;
     z-index: 2; }
+  section-vh {
+    padding: 0; }
+    section-vh > .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 30px;
+      padding-bottom: 30px; }
+      @media only screen and (min-width: 992px) {
+        section-vh > .container {
+          min-height: 100vh;
+          padding-top: 65px;
+          padding-bottom: 65px; } }
+      section-vh > .container:after {
+        content: ' '; }
+  section-header {
+    margin-bottom: 20px; }
+    @media only screen and (min-width: 992px) {
+      section-header {
+        margin-bottom: 44px; } }
 
 @media only screen and (min-width: 1300px) {
   .container {
@@ -2057,21 +2077,6 @@ section {
     padding-top: 25px;
     margin: 0; }
 
-.section-intro:before, .section-intro:after, .section-contacts:before, .section-contacts:after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 50%;
-  bottom: 0;
-  top: 0;
-  z-index: 1; }
-
-.section-header {
-  margin-bottom: 20px; }
-  @media only screen and (min-width: 992px) {
-    .section-header {
-      margin-bottom: 44px; } }
-
 .content-box {
   position: relative;
   background-color: rgba(0, 153, 204, 0.6);
@@ -2081,6 +2086,15 @@ section {
   @media only screen and (min-width: 992px) {
     .content-box {
       padding: 75px 40px 55px 50px; } }
+
+.section-intro:before, .section-intro:after, .section-contacts:before, .section-contacts:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50%;
+  bottom: 0;
+  top: 0;
+  z-index: 1; }
 
 .section-intro {
   position: relative;
@@ -2130,62 +2144,27 @@ section {
   .section-advantages .container {
     position: relative;
     z-index: 2; }
-  @media only screen and (min-width: 992px) {
-    .section-advantages:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      height: 300px;
-      width: 74%;
-      background-color: rgba(14, 26, 54, 0.05);
-      transform: translateY(-50%);
-      z-index: 1; } }
   .section-advantages .advantages-list {
+    padding-top: 10px;
     position: relative; }
-    @media only screen and (min-width: 992px) {
-      .section-advantages .advantages-list:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 30%;
-        display: block;
-        width: 2px;
-        background-color: #0e1a36;
-        z-index: 1; } }
-  @media only screen and (min-width: 992px) and (min-width: 1300px) {
-    .section-advantages .advantages-list:before {
-      left: 22.7%; } }
     .section-advantages .advantages-list-item {
       display: flex;
       align-items: center;
       margin-bottom: 30px; }
-      @media only screen and (min-width: 992px) {
-        .section-advantages .advantages-list-item {
-          align-items: flex-start;
-          margin-bottom: 40px; } }
+      .section-advantages .advantages-list-item:last-child {
+        margin-bottom: 0; }
     .section-advantages .advantages-list .card-body {
-      padding-top: 10px;
       padding-left: 4%; }
-      @media only screen and (min-width: 992px) {
-        .section-advantages .advantages-list .card-body {
-          padding-left: 7.5%; } }
-    .section-advantages .advantages-list .icon-wrap {
-      padding-top: 10px; }
     .section-advantages .advantages-list .card-title {
       margin-bottom: 17px; }
   .section-advantages .icon-wrap {
     display: flex;
-    width: 80px;
+    width: 22.5%;
+    min-width: 80px;
     height: 80px;
     flex-shrink: 0;
     justify-content: center;
     align-items: center; }
-    @media only screen and (min-width: 992px) {
-      .section-advantages .icon-wrap {
-        margin-left: 7%;
-        margin-right: 7%; } }
     .section-advantages .icon-wrap .card-img {
       display: block;
       height: auto; }
@@ -2196,21 +2175,36 @@ section {
       .section-advantages .icon-wrap .card-img-3, .section-advantages .icon-wrap .card-img-4 {
         width: 49px; }
 
-.section-vh {
-  padding: 0; }
-  .section-vh > .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 30px;
-    padding-bottom: 30px; }
-    @media only screen and (min-width: 992px) {
-      .section-vh > .container {
-        min-height: 100vh;
-        padding-top: 65px;
-        padding-bottom: 65px; } }
-    .section-vh > .container:after {
-      content: ' '; }
+@media only screen and (min-width: 992px) {
+  .section-advantages .advantages-list:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20.5%;
+    display: block;
+    width: 2px;
+    background-color: #0e1a36;
+    z-index: 1; }
+  .section-advantages .advantages-list:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 0;
+    height: 300px;
+    width: 100vw;
+    background-color: rgba(14, 26, 54, 0.05);
+    transform: translateY(-50%);
+    z-index: 1; }
+  .section-advantages .advantages-list-item {
+    position: relative;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    z-index: 2; }
+  .section-advantages .card-body {
+    padding-left: 7.5%; }
+  .section-advantages .card-text {
+    padding-left: 15px; } }
 
 .section-software {
   position: relative;
@@ -2289,9 +2283,6 @@ section {
 .section-video .section-header {
   margin-bottom: 20px; }
 
-/**
-*CONTACT SECTION
-**/
 .section-intro:before, .section-intro:after, .section-contacts:before, .section-contacts:after {
   content: '';
   position: absolute;

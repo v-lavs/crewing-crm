@@ -7,4 +7,28 @@ section {
         position: relative;
         z-index: 2;
     }
+    &-vh {
+        padding: 0;
+        & > .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            @include respond-to($lg) {
+                min-height: 100vh;
+                padding-top: 65px;
+                padding-bottom: 65px;
+            }
+            &:after {
+                content: ' ';
+            }
+        }
+    }
+    &-header {
+        margin-bottom: 20px;
+        @include respond-to($lg) {
+            margin-bottom: 44px;
+        }
+    }
 }

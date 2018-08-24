@@ -1,0 +1,16 @@
+.section-video {
+    .video {
+        display: block;
+        width: 100%;
+        height: 180px;
+        @include respond-to($md) {
+            height: 320px;
+        }
+        @include respond-to($lg) {
+            height: 400px;
+        }
+    }
+    .section-header {
+        margin-bottom: 20px;
+    }
+}

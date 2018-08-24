@@ -1,0 +1,91 @@
+%pseudo {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50%;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.section-contacts {
+    position: relative;
+    display: table;
+    width: 100%;
+    background: url(../img/bg-contact.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-height: 400px;
+    padding: 20px 0 30px;
+    @include respond-to($md) {
+        padding: 120px 0;
+    }
+    @include respond-to($lg) {
+        height: 100vh;
+    }
+    &:before {
+        @extend %pseudo;
+        background: $dark;
+        right: 0;
+        opacity: .8;
+    }
+    &:after {
+        @extend %pseudo;
+        background: $white;
+        left: 0;
+        opacity: .6;
+    }
+    .section-header {
+        margin-bottom: 10px;
+        @include respond-to($lg) {
+            margin-bottom: 40px;
+        }
+    }
+    .contact-form {
+        .form-group {
+            margin-bottom: 10px;
+            @include respond-to($lg) {
+                margin-bottom: 20px;
+            }
+        }
+        textarea {
+            overflow: auto;
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border-radius: 4px;
+            background-color: #f2f2f2;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 8px 12px;
+            @include respond-to($lg) {
+                font-size: 18px;
+                padding: 11px 30px;
+            }
+        }
+        .btn-lg {
+            width: 100%;
+            @include respond-to($lg) {
+                width: auto;
+            }
+        }
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #bdbdbd;
+            font-style: italic;
+        }
+        .wrap-btn {
+            font-size: 16px;
+            text-align: center;
+            @include respond-to($lg) {
+                font-size: 18px;
+                text-align: right;
+            }
+        }
+        .btn-lg {
+            padding: 12px 0;
+            @include respond-to($lg) {
+                padding: 17px 33px;
+            }
+        }
+    }
+}

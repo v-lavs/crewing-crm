@@ -1,0 +1,91 @@
+.section-advantages {
+    position: relative;
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    .advantages-list {
+        padding-top: 10px;
+        position: relative;
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .card-body {
+            padding-left: 4%;
+        }
+        .card-title {
+            margin-bottom: 17px;
+        }
+    }
+    .icon-wrap {
+        display: flex;
+        width: 22.5%;
+        min-width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        .card-img {
+            display: block;
+            height: auto;
+            &-1,
+            &-5 {
+                width: 42px;
+            }
+            &-2 {
+                width: 41px;
+            }
+            &-3,
+            &-4 {
+                width: 49px;
+            }
+        }
+
+    }
+}
+
+@include respond-to($lg) {
+    .section-advantages {
+        .advantages-list {
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 20.5%;
+                display: block;
+                width: 2px;
+                background-color: $dark;
+                z-index: 1;
+            }
+            &:after {
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: 0;
+                height: 300px;
+                width: 100vw;
+                background-color: rgba(14, 26, 54, 0.05);
+                transform: translateY(-50%);
+                z-index: 1;
+            }
+            &-item {
+                position: relative;
+                align-items: flex-start;
+                margin-bottom: 40px;
+                z-index: 2;
+            }
+        }
+        .card-body {
+            padding-left: 7.5%;
+        }
+        .card-text {
+            padding-left: 15px;
+        }
+    }
+}
