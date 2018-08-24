@@ -1,4 +1,6 @@
 ### PREREQUISITES: You must have an installed node.js if you don't have one.
+1) You have to install Node.js if you don't have one.
+2) run this command  in terminal:
 npm install - Install dependencies.
 
 ### LAUNCH DEV mode (watching files):
