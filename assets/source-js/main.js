@@ -7,6 +7,22 @@ $(document).ready(function () {
     e.preventDefault();
   });
 
+  /***
+   * SMOOTH SCROLL TO ANCHOR
+   **/
+
+  function smoothScrollToAnchor (selector) {
+    $(selector).on('click', function (event) {
+      event.preventDefault();
+
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+      }, 1000);
+    });
+  }
+
+  smoothScrollToAnchor('#requestDemo');
+
   /**
    * STICKY-HEADER
    **/
