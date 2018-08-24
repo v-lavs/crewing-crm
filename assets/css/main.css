@@ -1714,18 +1714,40 @@ select.form-control-lg:not([size]):not([multiple]) {
     .form-inline .custom-control-label {
       margin-bottom: 0; } }
 
+/**
+*TEXT UTILITIES
+*/
+.text-uppercase {
+  text-transform: uppercase; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
 .text-small {
   font-size: 10px; }
   @media only screen and (min-width: 992px) {
     .text-small {
       font-size: 14px; } }
 
-.text-larg {
+.text-large {
   font-size: 18px;
   font-weight: 500; }
   @media only screen and (min-width: 992px) {
-    .text-larg {
+    .text-large {
       font-size: 21px; } }
+
+.text-medium {
+  font-size: 18px;
+  font-weight: 500; }
+
+.text-primary {
+  color: #0099cc; }
 
 body {
   background-color: #fff;
@@ -1757,9 +1779,6 @@ body {
   max-width: 100%;
   height: auto; }
 
-.title-blue {
-  color: #0099cc; }
-
 .title-section {
   margin-bottom: 20px; }
   @media only screen and (min-width: 992px) {
@@ -1769,21 +1788,6 @@ body {
 @media only screen and (min-width: 1300px) {
   .space-delimeter {
     padding-top: 100px; } }
-
-/**
-*TEXT UTILITIES
-*/
-.text-uppercase {
-  text-transform: uppercase; }
-
-.text-center {
-  text-align: center; }
-
-.text-right {
-  text-align: right; }
-
-.text-left {
-  text-align: left; }
 
 /**
 * LIGHTBOX STYLES
@@ -2048,34 +2052,35 @@ section {
   padding: 40px 0 30px;
   color: #fff;
   font-size: 18px; }
-  @media only screen and (min-width: 992px) {
-    .footer {
-      padding: 30px 0 25px; } }
   .footer .logo {
     display: block;
     width: 150px;
     height: 43px;
-    margin: 0 auto 16px; }
-    @media only screen and (min-width: 992px) {
-      .footer .logo {
-        margin: 0; } }
+    margin: 0 auto 15px; }
     .footer .logo img {
       width: 100%;
       display: block; }
   .footer a {
     color: #fff; }
   .footer .wrap-info {
-    margin-bottom: 35px;
-    text-align: center;
-    margin: 0 auto; }
-    @media only screen and (min-width: 992px) {
-      .footer .wrap-info {
-        margin-bottom: 0;
-        text-align: right;
-        margin-left: auto; } }
+    font-size: 14px;
+    text-align: center; }
   .footer .copyright {
-    padding-top: 25px;
+    font-size: 10px;
+    padding-top: 35px;
     margin: 0; }
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 30px 0 25px; }
+    .footer .wrap-info {
+      font-size: 18px;
+      text-align: right; }
+    .footer .logo {
+      margin: 0; }
+    .footer .copyright {
+      font-size: 18px;
+      padding-top: 25px; } }
 
 .content-box {
   position: relative;
@@ -2238,25 +2243,44 @@ section {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px; }
-    @media only screen and (min-width: 992px) {
-      .section-software .col-card {
-        width: 30%; } }
     .section-software .col-card-lg {
       width: 100%;
       padding-left: 15px;
       padding-right: 15px; }
-      @media only screen and (min-width: 992px) {
-        .section-software .col-card-lg {
-          width: 37.5%; }
-          .section-software .col-card-lg .block-img {
-            padding-top: 55%; } }
   .section-software .section-header {
     margin-bottom: 20px; }
   .section-software .block-img {
     position: relative;
-    padding-top: 69.84%;
     overflow: hidden;
     margin-bottom: 30px; }
+  .section-software .img-link {
+    display: block; }
+  .section-software .title-screen {
+    margin-bottom: 10px; }
+  .section-software .dots-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px; }
+    .section-software .dots-wrap .dot {
+      display: block;
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      margin: 0 10px;
+      background-color: #f2f2f2;
+      opacity: .5; }
+      .section-software .dots-wrap .dot.active {
+        opacity: 1; }
+
+@media only screen and (min-width: 992px) {
+  .section-software .col-card {
+    width: 30%; }
+    .section-software .col-card-lg {
+      width: 37.5%; }
+      .section-software .col-card-lg .block-img {
+        padding-top: 55%; }
+  .section-software .block-img {
+    padding-top: 69.84%; }
   .section-software .img-link {
     position: absolute;
     bottom: 0;
@@ -2264,10 +2288,9 @@ section {
     right: 0;
     z-index: 1; }
   .section-software .title-screen {
-    margin-bottom: 10px; }
-    @media only screen and (min-width: 992px) {
-      .section-software .title-screen {
-        margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+  .section-software .dots-wrap {
+    display: none; } }
 
 .section-video .video {
   display: block;

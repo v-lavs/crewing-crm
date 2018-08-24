@@ -52,12 +52,12 @@ $(document).ready(function () {
   function showError (condition, errorId, el, errContainer, message) {
     if (condition) {
       if (errContainer.empty()) {
-        errContainer.append('<p error-id="'+ errorId +'">'+ message +'</p>');
+        errContainer.append('<p error-id="' + errorId + '">' + message + '</p>');
         $(el).addClass('is-invalid');
       }
     }
     else {
-      errContainer.find('[error-id='+ errorId +']').remove();
+      errContainer.find('[error-id=' + errorId + ']').remove();
       $(el).removeClass('is-invalid');
     }
   }
@@ -65,18 +65,18 @@ $(document).ready(function () {
   function requiredField (node) {
     var fieldVal = $(node).val().trim();
     var errContainer = $(node).siblings('.invalid-feedback');
-    var msg = "Required field";
+    var msg = 'Required field';
 
-    showError(!fieldVal,"empty", node, errContainer,  msg);
+    showError(!fieldVal, 'empty', node, errContainer, msg);
   }
 
   function isEmail (node) {
     var regEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var fieldVal = $(node).val().trim();
     var errContainer = $(node).siblings('.invalid-feedback');
-    var msg = "Not valid email";
+    var msg = 'Not valid email';
 
-    showError(!regEmail.test(fieldVal), "email", node, errContainer,  msg);
+    showError(!regEmail.test(fieldVal), 'email', node, errContainer, msg);
   }
 
   $('[required]').on('blur', function () {
@@ -101,11 +101,11 @@ $(document).ready(function () {
     var slideWidth, slideListWidth, offset,
       slider = $('#responsiveCards'),
       slides = slider.find('.card-slide'),
+      index = 0,
       defWidth = $(window).width();
 
     function setDimensions () {
-      var newWidth = $(window).width();
-      if (defWidth <= 991 && defWidth !== newWidth) {
+      if (defWidth <= 991) {
         slideWidth = slider.width();
         slideListWidth = slideWidth * slides.length;
         offset = 0;
@@ -127,7 +127,7 @@ $(document).ready(function () {
     setDimensions();
 
     function moveLeft () {
-      if (Math.abs(offset) < slideListWidth - slideWidth) {
+      if (Math.round(Math.abs(offset)) < Math.round(slideListWidth - slideWidth)) {
         offset += slideWidth;
         $('.col-card-list').css({
           'transform': 'translateX(' + '-' + offset + 'px)'
@@ -136,7 +136,7 @@ $(document).ready(function () {
     }
 
     function moveRight () {
-      if (offset !== 0 && Math.abs(offset) >= slideWidth) {
+      if (offset !== 0 && Math.round(Math.abs(offset)) >= Math.round(slideWidth)) {
         offset -= slideWidth;
         $('.col-card-list').css({
           'transform': 'translateX(' + '-' + offset + 'px)'
@@ -174,8 +174,10 @@ $(document).ready(function () {
           deleteEvents();
         }
         else {
-          setDimensions();
-          addEvents();
+          if (defWidth !== windowWidth) {
+            setDimensions();
+            addEvents();
+          }
         }
       }, pause);
     });

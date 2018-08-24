@@ -33,48 +33,71 @@
         width: 100%;
         padding-left: 15px;
         padding-right: 15px;
-        @include respond-to($lg) {
-            width: 30%;
-        }
         &-lg {
             width: 100%;
             padding-left: 15px;
             padding-right: 15px;
-            @include respond-to($lg) {
+        }
+    }
+    .section-header {
+        margin-bottom: 20px;
+    }
+    .block-img {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+    .img-link {
+        display: block;
+    }
+    .title-screen {
+        margin-bottom: 10px;
+    }
+    .dots-wrap {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        .dot {
+            display: block;
+            border-radius: 50%;
+            width: 5px;
+            height: 5px;
+            margin: 0 10px;
+            background-color: #f2f2f2;
+            opacity: .5;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@include respond-to($lg) {
+    .section-software {
+        .col-card {
+            width: 30%;
+            &-lg {
                 width: 37.5%;
                 .block-img {
                     padding-top: 55%;
                 }
             }
         }
-    }
-    .section-header {
-        margin-bottom: 20px;
-    }
-
-    @include respond-to($lg) {
-        .section-header,
-        .col-cards-wrap {
+        .block-img {
+            padding-top: 69.84%;
         }
-    }
-
-    .block-img {
-        position: relative;
-        padding-top: 69.84%;
-        overflow: hidden;
-        margin-bottom: 30px;
-    }
-    .img-link {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
-    }
-    .title-screen {
-        margin-bottom: 10px;
-        @include respond-to($lg) {
+        .img-link {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+        .title-screen {
             margin-bottom: 20px;
+        }
+        .dots-wrap {
+            display: none;
         }
     }
 }

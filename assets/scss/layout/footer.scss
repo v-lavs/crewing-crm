@@ -1,19 +1,13 @@
-.footer{
+.footer {
     background: $dark;
     padding: 40px 0 30px;
     color: $white;
     font-size: 18px;
-    @include respond-to($lg) {
-        padding: 30px 0 25px;
-    }
     .logo {
         display: block;
         width: 150px;
         height: 43px;
-        margin: 0 auto 16px;
-        @include respond-to($lg) {
-            margin: 0;
-        }
+        margin: 0 auto 15px;
         img {
             width: 100%;
             display: block;
@@ -23,17 +17,29 @@
         color: #fff;
     }
     .wrap-info {
-        margin-bottom: 35px;
+        font-size: 14px;
         text-align: center;
-        margin: 0 auto;
-        @include respond-to($lg) {
-            margin-bottom: 0;
-            text-align: right;
-            margin-left: auto;
-        }
     }
     .copyright {
-        padding-top: 25px;
+        font-size: 10px;
+        padding-top: 35px;
         margin: 0;
+    }
+}
+
+@include respond-to($md) {
+    .footer {
+        padding: 30px 0 25px;
+        .wrap-info {
+            font-size: 18px;
+            text-align: right;
+        }
+        .logo {
+            margin: 0;
+        }
+        .copyright {
+            font-size: 18px;
+            padding-top: 25px;
+        }
     }
 }

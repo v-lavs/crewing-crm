@@ -1,14 +1,39 @@
-.text-small {
-    font-size: 10px;
-    @include respond-to($lg){
-        font-size: 14px;
-    }
-}
+/**
+*TEXT UTILITIES
+*/
 
-.text-larg {
-    font-size: 18px;
-    font-weight: 500;
-    @include respond-to($lg){
-        font-size: 21px;
+.text {
+    &-uppercase {
+        text-transform: uppercase;
     }
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
+    &-left {
+        text-align: left;
+    }
+    &-small {
+        font-size: 10px;
+        @include respond-to($lg){
+            font-size: 14px;
+        }
+    }
+    &-large {
+        font-size: 18px;
+        font-weight: 500;
+        @include respond-to($lg){
+            font-size: 21px;
+        }
+    }
+    &-medium {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    &-primary {
+        color: $primary;
+    }
+
 }
