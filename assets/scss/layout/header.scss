@@ -13,7 +13,6 @@
         display: inline-block;
         vertical-align: middle;
         width: 81px;
-        height: 23px;
         margin-left: 20px;
         .img-logo-w {
             display: none;
@@ -37,7 +36,6 @@
             }
         }
     }
-
     .backdrop {
         position: fixed;
         display: none;
@@ -71,8 +69,7 @@
     .header {
         .logo-site {
             display: block;
-            width: 200px;
-            height: 55px;
+            width: 245px;
         }
     }
 }
@@ -92,7 +89,10 @@
     }
 }
 
-@media screen and (min-width: 1160px) {
+@include respond-to($xl) {
+}
+
+@include respond-to($xxl){
     .header {
         .logo-site {
             display: block;
