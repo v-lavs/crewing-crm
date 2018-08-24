@@ -15,7 +15,7 @@
     height: 280px;
     padding: 52px 0 38px;
     color: $white;
-    background: url(../img/bg-banner.jpg) center center no-repeat;
+    background: url(../assets/img/bg-banner.jpg) center center no-repeat;
     background-size: cover;
     overflow: hidden;
     @include respond-to($md) {

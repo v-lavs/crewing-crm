@@ -1,58 +1,100 @@
+'use strict';
+
 var gulp = require('gulp'),
-    sourcemaps = require('gulp-sourcemaps'),
-    plumber = require('gulp-plumber'),
-    autoprefixer = require('gulp-autoprefixer'),
-    watch = require('gulp-watch'),
-    notify = require('gulp-notify'),
-    sass = require('gulp-sass'),
-    gcmq = require('gulp-group-css-media-queries'),
-    cssmin = require('gulp-cssmin');
+  watch = require('gulp-watch'),
+  prefixer = require('gulp-autoprefixer'),
+  uglify = require('gulp-uglify'),
+  sass = require('gulp-sass'),
+  sourcemaps = require('gulp-sourcemaps'),
+  cssmin = require('gulp-minify-css'),
+  include = require('gulp-include'),
+  gcmq = require('gulp-group-css-media-queries'),
+  rimraf = require('rimraf');
 
-var config = {
-    sourceMaps: true,
-    sassOptions: {
-        errLogToConsole: true,
-        precision: 4,
-        noCache: true,
-    }
+var path = {
+  build: {
+    js: './build/',
+    css: './build/'
+  },
+  src: {
+    js: './src/js/main.js',
+    style: './src/style/main.scss'
+  },
+  watch: {
+    js: './src/js/**/*.js',
+    style: './src/style/**/*.scss'
+  },
+  clean: './build'
 };
 
-// Default error handler
-var onError = function (err) {
-    console.log('An error occured:', err.message);
-    this.emit('end');
-};
-
-gulp.task('sass', function () {
-    return gulp.src('./assets/scss/main.scss')
-        .pipe(plumber({errorHandler: onError}))
-        .pipe(sourcemaps.init())
-        .pipe(sass(config.sassOptions))
-        .pipe(sourcemaps.write('./map'))
-        .pipe(gulp.dest('./assets/css'))
-        .pipe(notify({title: 'Styles', message: 'update successfully'}));
+gulp.task('clean', function (cb) {
+  rimraf(path.clean, cb);
 });
 
-gulp.task('sass:build', function () {
-    return gulp.src('./assets/scss/main.scss')
-        .pipe(plumber({errorHandler: onError}))
-        .pipe(sass(config.sassOptions))
-        .pipe(autoprefixer({
-            browsers: ['last 6 version', '> 0.2%', 'ie 9']
-        }))
-        .pipe(gcmq())
-        .pipe(cssmin())
-        .pipe(gulp.dest('./assets/css'))
-        .pipe(notify({title: 'Styles', message: 'build successfully'}));
+gulp.task('js:dev', function () {
+  gulp.src(path.src.js)
+  .pipe(sourcemaps.init())
+    .pipe(include({
+      extensions: "js",
+      hardFail: true
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(path.build.js));
 });
 
-// watch files for change
-gulp.task('watch', ['sass'], function () {
-    gulp.watch('./assets/scss/**/*.scss', ['sass']);
+
+gulp.task('js:build', function () {
+  gulp.src(path.src.js)
+    .pipe(include({
+      extensions: "js",
+      hardFail: true
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest(path.build.js));
 });
 
-gulp.task('build', ['sass:build'], function () {
+gulp.task('style:dev', function () {
+  gulp.src(path.src.style)
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      sourceMap: true,
+      errLogToConsole: true
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(path.build.css));
 });
 
-gulp.task('default', ['sass'], function () {
+gulp.task('style:build', function () {
+  gulp.src(path.src.style)
+    .pipe(sass({
+      sourceMap: false,
+      errLogToConsole: true
+    }))
+    .pipe(prefixer())
+    .pipe(gcmq())
+    .pipe(cssmin())
+    .pipe(gulp.dest(path.build.css));
 });
+
+gulp.task('build', [
+  'js:build',
+  'style:build'
+]);
+
+gulp.task('dev', [
+  'js:dev',
+  'style:dev'
+]);
+
+gulp.task('watch:styles', ['style:dev'], function () {
+  gulp.watch(path.watch.style, ['style:dev']);
+});
+
+gulp.task('watch:js', ['js:dev'], function () {
+  gulp.watch(path.watch.js, ['js:dev']);
+});
+
+gulp.task('watch',['watch:styles', 'watch:js'], function(){
+});
+
+gulp.task('default', ['build', 'watch']);

@@ -1,23 +1,20 @@
 {
-  "name": "devchallenge",
+  "name": "iLavs-gulp-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Easy start to build WP and HTML themes",
   "scripts": {
-    "start": "gulp watch",
-    "build": "gulp build --production"
+    "start": "gulp clean && gulp watch",
+    "build": "gulp clean && gulp build"
   },
-  "author": "devchallenge",
+  "author": "vLavs",
   "license": "ISC",
   "devDependencies": {
     "gulp": "3.9.1",
+    "gulp-minify-css": "1.2.4",
+    "rimraf": "2.6.2",
     "gulp-autoprefixer": "4.1.0",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-group-css-media-queries": "^1.2.2",
-    "gulp-if": "2.0.2",
+    "gulp-group-css-media-queries": "1.2.2",
     "gulp-include": "2.3.1",
-    "gulp-notify": "3.2.0",
-    "gulp-plumber": "1.2.0",
-    "gulp-rename": "1.2.2",
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "3.0.0",
@@ -25,6 +22,6 @@
     "gulp-watch": "5.0.0"
   },
   "dependencies": {
-    "bootstrap": "^4.1.1"
+    "bootstrap": "^4.1.3"
   }
 }

@@ -79,7 +79,7 @@
     height: 23px;
     border: none;
     padding: 5px;
-    background: url("../img/icons/btn_menu_close.svg") center center no-repeat;
+    background: url("../assets/img/icons/btn_menu_close.svg") center center no-repeat;
     z-index: 10;
     @include respond-to($md) {
         display: none;

@@ -1,4 +1,12 @@
 /**
+ *To include js file from libraries write: `//= include ./path-to-file`
+* */
+
+//= include lib/jquery-3.3.1.min.js
+//= include lib/pure-swipe.min.js
+//= include lib/simple-lightbox.min.js
+
+/**
  * CUSTOM SCRIPTS
  **/
 
