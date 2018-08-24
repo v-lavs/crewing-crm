@@ -137,6 +137,7 @@ $(document).ready(function () {
     function resetStyles () {
       $('.col-card-list').removeAttr('style');
       $('.card-slide').removeAttr('style');
+      index = 0;
     }
 
     resetStyles();
@@ -145,19 +146,53 @@ $(document).ready(function () {
     function moveLeft () {
       if (Math.round(Math.abs(offset)) < Math.round(slideListWidth - slideWidth)) {
         offset += slideWidth;
+        ++index;
         $('.col-card-list').css({
           'transform': 'translateX(' + '-' + offset + 'px)'
         });
+        changeActiveDot();
       }
     }
 
     function moveRight () {
       if (offset !== 0 && Math.round(Math.abs(offset)) >= Math.round(slideWidth)) {
+        --index;
         offset -= slideWidth;
         $('.col-card-list').css({
           'transform': 'translateX(' + '-' + offset + 'px)'
         });
+        changeActiveDot();
       }
+    }
+
+    function renderDots () {
+      var wrapperDots = $('.dots-wrap');
+      var dotsCount = slides.length;
+      for (var i = 0; i < dotsCount; i++) {
+        if (i === 0) {
+          wrapperDots.append('<div class="dot active"></div>');
+        }
+        else {
+          wrapperDots.append('<div class="dot"></div>');
+        }
+      }
+    }
+
+    function changeActiveDot () {
+      var dots = $('.dots-wrap .dot');
+      dots.removeClass('active');
+      dots.eq(index).addClass('active');
+    }
+
+    function dotsChangeSlide() {
+      $(document).on('click', '.dots-wrap .dot', function () {
+        index = $(this).index();
+        changeActiveDot();
+        offset = slideWidth * index;
+        $('.col-card-list').css({
+          'transform': 'translateX(' + '-' + offset + 'px)'
+        });
+      });
     }
 
     function addEvents () {
@@ -169,6 +204,12 @@ $(document).ready(function () {
       document.getElementById('responsiveCards').removeEventListener('swiped-left', moveLeft);
       document.getElementById('responsiveCards').removeEventListener('swiped-right', moveRight);
     }
+
+    dotsChangeSlide();
+    renderDots();
+    changeActiveDot();
+
+
 
     addEvents();
 
