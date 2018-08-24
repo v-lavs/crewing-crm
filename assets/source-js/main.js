@@ -14,7 +14,7 @@ $(document).ready(function () {
 
   function addScrollClass () {
     scrolled = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrolled > 120) {
+    if (scrolled > 40) {
       $('.header').addClass('scroll');
     } else {
       $('.header').removeClass('scroll');
@@ -31,13 +31,15 @@ $(document).ready(function () {
    * MOB MENU SCRIPT
    **/
 
-  var nav = $('.menu-header');
+  var nav = $('.header-menu');
+
   $('.burger').click(function (e) {
     e.preventDefault();
     nav.addClass('open');
     jQuery('.backdrop').fadeIn();
   });
-  $('.close-nav').click(function (e) {
+
+  $('.close-nav, .backdrop').click(function (e) {
     e.preventDefault();
     nav.removeClass('open');
     jQuery('.backdrop').fadeOut();

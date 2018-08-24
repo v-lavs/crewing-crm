@@ -9,15 +9,20 @@
 }
 
 .btn {
-    padding: 7px 30px;
+    display: inline-block;
+    padding: 9px 30px;
     border-radius: 4px;
     font-size: 18px;
-    font-weight: 700;
+    line-height: normal;
     &.btn-lg {
+        font-size: 10px;
+        border-radius: 4px;
         padding: 9px 17px;
         text-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
         @include respond-to($lg){
-            padding: 13px 35px;
+            font-size: 18px;
+            border-radius: 8px;
+            padding: 17px 33px;
         }
     }
     &-success {
@@ -27,18 +32,11 @@
         color: $white;
         border: none;
         outline: none;
+        font-weight: 700;
         &:hover,
         &:focus {
             background-color: #4cd964;
             box-shadow: 0 0 20px 0 #4cd964;
-        }
-        &:not(:disabled):not(.disabled):active,
-        &:not(:disabled):not(.disabled).active {
-            background-color: #1eca3b;
-            box-shadow: 0 0 8px 0 #4cd964, inset 0 0 10px 0 rgba(0, 0, 0, 0.1);
-            &:focus {
-                box-shadow: 0 0 8px 0 #4cd964, inset 0 0 10px 0 rgba(0, 0, 0, 0.1);
-            }
         }
     }
     .btn-outline-primary {

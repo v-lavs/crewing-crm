@@ -7,46 +7,37 @@
     align-items: center;
     background: transparent;
     padding: 17px 0;
+    transition: .3s;
     z-index: 1000;
-    @include respond-to($md) {
-        justify-content: space-between;
-    }
     .logo-site {
         display: inline-block;
         vertical-align: middle;
         width: 81px;
         height: 23px;
-        @include respond-to($md){
-            display: block;
-            width: 300px;
-            height: 86px;
-        }
         margin-left: 20px;
-    }
-    .menu-header {
-        @include respond-to($md) {
-            min-width: 50%;
+        .img-logo-w {
+            display: none;
         }
     }
     .burger {
         display: block;
-        width: 16px;
+        width: 26px;
+        padding: 5px;
         background-color: transparent;
         border: none;
-        padding: 0;
-        margin-left: 20px;
-        margin-top: 3px;
-        @include respond-to($md) {
-            display: none !important;
-        }
+        margin-left: 11px;
         .line {
             display: block;
             width: 100%;
             height: 2px;
             background-color: $white;
             margin-bottom: 3px;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
+
     .backdrop {
         position: fixed;
         display: none;
@@ -60,5 +51,53 @@
     }
     &.open {
         display: block;
+    }
+}
+
+.scroll {
+    background-color: $dark !important;
+    .logo-site {
+        .img-logo {
+            display: none;
+        }
+        .img-logo-w {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+@include respond-to($md) {
+    .header {
+        .logo-site {
+            display: block;
+            width: 200px;
+            height: 55px;
+        }
+    }
+}
+
+@include respond-to($lg) {
+    .header {
+        justify-content: space-between;
+        .header-menu {
+            min-width: 50%;
+        }
+    }
+    .burger {
+        display: none !important;
+    }
+    .backdrop {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 1160px) {
+    .header {
+        .logo-site {
+            display: block;
+            width: 300px;
+            height: 86px;
+        }
     }
 }

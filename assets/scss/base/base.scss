@@ -1,10 +1,7 @@
 body {
     background-color: $white;
-    font-size: 12px;
-    font-weight: normal;
-    font-style: normal;
+    font: normal 12px/normal Roboto, sans-serif;
     font-stretch: normal;
-    line-height: normal;
     letter-spacing: normal;
     @include respond-to($lg) {
         font-size: 16px;
@@ -31,6 +28,11 @@ body {
     overflow: hidden;
 }
 
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
 .title-blue {
     color: $primary;
 }
@@ -49,12 +51,32 @@ body {
 }
 
 /**
+*TEXT UTILITIES
+*/
+
+.text {
+    &-uppercase {
+        text-transform: uppercase;
+    }
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
+    &-left {
+        text-align: left;
+    }
+}
+
+/**
 * LIGHTBOX STYLES
  */
 .sl-overlay {
     background: #0e1a36;
     opacity: 0.8;
 }
+
 .sl-wrapper {
     .sl-navigation {
         button {

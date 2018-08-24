@@ -1,8 +1,8 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
 @import 'utils/variables';
 @import 'utils/mixins';
 
 @import 'base/reset';
+@import 'base/bootstrap.custom';
 @import 'base/typography';
 @import 'base/base';
 
