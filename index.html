@@ -34,16 +34,16 @@
             </div>
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Block1</a>
+                    <a class="nav-link active" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Block2</a>
+                    <a class="nav-link" href="#">Prices</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Block3</a>
+                    <a class="nav-link" href="#">Demo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Block4</a>
+                    <a class="nav-link" href="#">Contacts</a>
                 </li>
             </ul>
         </nav>
@@ -288,19 +288,33 @@
                                     <form action="/" method="post" enctype="multipart/form-data" id="contactForm"
                                           class="contact-form">
                                         <div class="form-group">
-                                            <label for="inputName" class="visually-hidden">Email address</label>
-                                            <input type="email" class="form-control" id="inputName" placeholder="Имя">
+                                            <label for="inputName" class="visually-hidden">Name</label>
+                                            <input type="text"
+                                                   class="form-control" id="inputName"
+                                                   placeholder="Имя"
+                                                   required>
+                                            <div class="invalid-feedback"></div>
                                         </div>
+
                                         <div class="form-group">
                                             <label for="inputEmail1" class="visually-hidden">Email address</label>
-                                            <input type="email" class="form-control" id="inputEmail1"
+                                            <input type="email"
+                                                   class="form-control"
+                                                   id="inputEmail1"
+                                                   required
                                                    placeholder="E-mail">
+                                            <div class="invalid-feedback"></div>
                                         </div>
+
                                         <div class="form-group">
                                             <label for="inputDescribe" class="visually-hidden"></label>
-                                            <textarea rows="5" cols="45" name="text" id="inputDescribe"
+                                            <textarea rows="5" cols="45"
+                                                      name="text"
+                                                      id="inputDescribe"
                                                       class="description form-control"
+                                                      required
                                                       placeholder="Текст сообщения"></textarea>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                         <div class="wrap-btn text-right">
                                             <button type="submit" class="btn btn-success btn-lg text-uppercase">

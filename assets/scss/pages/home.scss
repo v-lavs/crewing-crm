@@ -120,17 +120,17 @@
         &-item {
             display: flex;
             align-items: center;
+            margin-bottom: 30px;
             @include respond-to($lg) {
                 align-items: flex-start;
+                margin-bottom: 40px;
             }
         }
         .card-body {
             padding-top: 10px;
             padding-left: 4%;
-            padding-bottom: 30px;
             @include respond-to($lg) {
                 padding-left: 7.5%;
-                padding-bottom: 40px;
             }
 
         }

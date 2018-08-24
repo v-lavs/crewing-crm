@@ -6774,18 +6774,18 @@ section {
       left: 22.7%; } }
     .section-advantages .advantages-list-item {
       display: flex;
-      align-items: center; }
+      align-items: center;
+      margin-bottom: 30px; }
       @media only screen and (min-width: 992px) {
         .section-advantages .advantages-list-item {
-          align-items: flex-start; } }
+          align-items: flex-start;
+          margin-bottom: 40px; } }
     .section-advantages .advantages-list .card-body {
       padding-top: 10px;
-      padding-left: 4%;
-      padding-bottom: 30px; }
+      padding-left: 4%; }
       @media only screen and (min-width: 992px) {
         .section-advantages .advantages-list .card-body {
-          padding-left: 7.5%;
-          padding-bottom: 40px; } }
+          padding-left: 7.5%; } }
     .section-advantages .advantages-list .icon-wrap {
       padding-top: 10px; }
     .section-advantages .advantages-list .card-title {

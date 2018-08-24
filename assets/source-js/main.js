@@ -22,6 +22,7 @@ $(document).ready(function () {
   }
 
   addScrollClass();
+
   $(window).on('scroll', function () {
     addScrollClass();
   });
@@ -43,6 +44,48 @@ $(document).ready(function () {
   });
 
   /**
+   * FORM VALIDATION
+   */
+
+  function showError (condition, errorId, el, errContainer, message) {
+    if (condition) {
+      if (errContainer.empty()) {
+        errContainer.append('<p error-id="'+ errorId +'">'+ message +'</p>');
+        $(el).addClass('is-invalid');
+      }
+    }
+    else {
+      errContainer.find('[error-id='+ errorId +']').remove();
+      $(el).removeClass('is-invalid');
+    }
+  }
+
+  function requiredField (node) {
+    var fieldVal = $(node).val().trim();
+    var errContainer = $(node).siblings('.invalid-feedback');
+    var msg = "Required field";
+
+    showError(!fieldVal,"empty", node, errContainer,  msg);
+  }
+
+  function isEmail (node) {
+    var regEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var fieldVal = $(node).val().trim();
+    var errContainer = $(node).siblings('.invalid-feedback');
+    var msg = "Not valid email";
+
+    showError(!regEmail.test(fieldVal), "email", node, errContainer,  msg);
+  }
+
+  $('[required]').on('blur', function () {
+    requiredField(this);
+  });
+
+  $('[type="email"]').on('blur', function () {
+    isEmail(this);
+  });
+
+  /**
    * SIMPLE LIGHTBOX FOR IMAGES
    */
 
@@ -51,24 +94,26 @@ $(document).ready(function () {
   /**
    * RESPONSIVE CARDS SWIPER
    */
-  function vSlider () {
-    var slider = $('#responsiveCards');
-    var sliderList = slider.find('.col-card-list');
-    var slides = slider.find('.card-slide');
 
-    var slideWidth, slideListWidth, offset;
+  function vSlider () {
+    var slideWidth, slideListWidth, offset,
+      slider = $('#responsiveCards'),
+      slides = slider.find('.card-slide'),
+      defWidth = $(window).width();
 
     function setDimensions () {
-      if($(window).width() <= 991) {
-      slideWidth = slider.width();
-      slideListWidth = slideWidth * slides.length;
-      offset = 0;
-      $('.col-card-list').css({
-        'width': slideListWidth + 'px',
-        'transform': 'translateX(' + '-' + offset + 'px)'
-      });
-      $('.card-slide').css({'width': slideWidth + 'px'});
-    }
+      var newWidth = $(window).width();
+      if (defWidth <= 991 && defWidth !== newWidth) {
+        slideWidth = slider.width();
+        slideListWidth = slideWidth * slides.length;
+        offset = 0;
+
+        $('.col-card-list').css({
+          'width': slideListWidth + 'px',
+          'transform': 'translateX(' + '-' + offset + 'px)'
+        });
+        $('.card-slide').css({'width': slideWidth + 'px'});
+      }
     }
 
     function resetStyles () {
@@ -97,28 +142,40 @@ $(document).ready(function () {
       }
     }
 
-    function addEvents() {
+    function addEvents () {
       document.getElementById('responsiveCards').addEventListener('swiped-left', moveLeft);
-
-      document.getElementById('responsiveCards').addEventListener('swiped-right',moveRight);
+      document.getElementById('responsiveCards').addEventListener('swiped-right', moveRight);
     }
 
-    function deleteEvents() {
+    function deleteEvents () {
       document.getElementById('responsiveCards').removeEventListener('swiped-left', moveLeft);
       document.getElementById('responsiveCards').removeEventListener('swiped-right', moveRight);
     }
 
     addEvents();
 
+    /**
+     * RECALCULATE SLIDES DIMENSION AFTER RESIZE EVENT END
+     */
+
+    var resizeListener;
+    var pause = 150;
+
     $(window).on('resize', function () {
-      if($(window).width() >= 991) {
-        resetStyles();
-        deleteEvents();
-      }
-      else {
-        setDimensions();
-        addEvents();
-      }
+      clearTimeout(resizeListener);
+
+      resizeListener = setTimeout(function () {
+        var windowWidth = $(window).width();
+
+        if (windowWidth >= 991) {
+          resetStyles();
+          deleteEvents();
+        }
+        else {
+          setDimensions();
+          addEvents();
+        }
+      }, pause);
     });
   }
 
