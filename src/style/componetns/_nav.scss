@@ -106,6 +106,7 @@
             font-size: 14px;
             color: $dark;
             border: 3px solid transparent;
+            transition: .4s;
             &.active,
             &:active {
                 @extend %active;
@@ -113,8 +114,7 @@
             &.active {
                 font-weight: 700;
             }
-            &:hover,
-            &:focus {
+            &:hover {
                 @extend %hover;
                 color: $white !important;
             }

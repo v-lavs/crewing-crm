@@ -21,19 +21,25 @@ $(document).ready(function () {
 
   function smoothScrollToAnchor (selector) {
     $(selector).on('click', function (event) {
-      event.preventDefault();
+      var anchor = $.attr(this, 'href');
 
-      $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-      }, 1000);
+      if(anchor.match(/^#/) && anchor !== '#') {
+        event.preventDefault();
+
+        $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top -80
+        }, 1000);
+      }
     });
   }
 
   smoothScrollToAnchor('#requestDemo');
+  smoothScrollToAnchor('.header .nav-link');
 
   /**
    * STICKY-HEADER
    **/
+
   var scrolled;
 
   function addScrollClass () {
@@ -49,6 +55,16 @@ $(document).ready(function () {
 
   $(window).on('scroll', function () {
     addScrollClass();
+  });
+
+  /**
+   *  TOGGLE ACTIVE CLASS
+   * */
+
+  $('.header .nav-link').click(function (e) {
+    e.preventDefault();
+    $('.header .nav-link').removeClass('active');
+    $(this).addClass('active');
   });
 
   /**
